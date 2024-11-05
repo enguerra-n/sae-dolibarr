@@ -13,7 +13,8 @@
 ## Séance n° 1
 
 * 05/11 > 14H30 - 17H30
-* Travail effectué : Création du Readme et du document suivi de projet 
+* Travail effectué : Création du Readme, du document suivi de projet
+  et premières maquettes de Dockerfiles
 * A faire à la prochaine séance : 
 * Difficultés rencontrées : 
 * Remarques divers : 
