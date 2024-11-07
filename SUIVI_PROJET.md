@@ -23,7 +23,7 @@
 ## Séance n° 2
 
 * 06/11 > 8H30 - 11H30
-* Travail effectué : découverte de dolibarr, créattion de user et user group
+* Travail effectué : Prise en main de l'interface web dolibarr, créattion de user et user group
 * A faire à la prochaine séance : création des utilisateurs basiques : super-admin, admin, user + ajout de module(s) à des fins de tests.
 * Difficultés rencontrées : création du dockerfiles avec les bon user et la bonne liaisons à la DB.
 * Remarques sur la séances (membre absent, pbe technique, ...) : aucune
