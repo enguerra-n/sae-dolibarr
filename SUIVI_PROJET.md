@@ -4,7 +4,7 @@
 
 #### ETAT D'AVANCEMENT DU PROJET : 10%
 
-* SAE CRM (Dolibar)
+* SAE ERP / CRM (Dolibar)
 * Chef de projet : Enguerran LECOQ
 * Autre membre : Quentin LELOUP
 * Début du projet : 05/11/2024
