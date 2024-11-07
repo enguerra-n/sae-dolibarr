@@ -23,7 +23,7 @@
 ## Séance n° 2
 
 * 06/11 > 8H30 - 11H30
-* Travail effectué : Prise en main de l'interface web dolibarr, créattion de user et user group
+* Travail effectué : Prise en main de l'interface web dolibarr, création de user et user group
 * A faire à la prochaine séance : création des utilisateurs basiques : super-admin, admin, user + ajout de module(s) à des fins de tests.
 * Difficultés rencontrées : création du dockerfiles avec les bon user et la bonne liaisons à la DB.
 * Remarques sur la séances (membre absent, pbe technique, ...) : aucune
@@ -31,12 +31,18 @@
 
 ## Séance n° 3
 
-* date - heure
-* Travail effectué
-* A faire à la prochaine séance
-* Difficultés rencontrées
+* 07/11 > 8H30 - 11H30
+* Travail effectué : tests des nouveaux modules installé + la gestion des utilisateurs
+* A faire à la prochaine séance : comprendre la BDD
+* Difficultés rencontrées : compréhension générale de l'ERP Dolibarr
 * Remarques sur la séances (membre absent, pbe technique, ...)
 
+## Séance n° 4
 
+* 07/11 > 13H00 - 19H00
+* Travail effectué : découverte de la BDD + début de la création du script import csv (découverte de toutes les tables + les éléments essentiels)
+* A faire à la prochaine séance : continuer le script et effectuer des tests simple avec.
+* Difficultés rencontrées : connexion à la base de données en ligne de commande pour le code de manière sécurisé.
+* Remarques sur la séances (membre absent, pbe technique, ...)
 
 ...
