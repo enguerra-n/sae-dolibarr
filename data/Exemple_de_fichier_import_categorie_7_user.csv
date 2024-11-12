@@ -1,0 +1,2 @@
+Tag/catégorie* (cu.fk_categorie),Utilisateur* (cu.fk_user)
+rowid or label,rowid or login

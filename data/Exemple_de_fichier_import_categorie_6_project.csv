@@ -1,0 +1,2 @@
+Tag/catégorie* (cp.fk_categorie),Projet* (cp.fk_project)
+rowid or label,rowid or ref

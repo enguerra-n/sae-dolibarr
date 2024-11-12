@@ -1,0 +1,2 @@
+Tag/catégorie* (cc.fk_categorie),Identifiant contact* (cc.fk_socpeople)
+rowid or label,rowid

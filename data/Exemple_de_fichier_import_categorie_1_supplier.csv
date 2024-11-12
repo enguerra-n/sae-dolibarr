@@ -1,0 +1,2 @@
+Tag/catégorie* (cs.fk_categorie),Fournisseur* (cs.fk_soc)
+rowid or label,rowid or name
