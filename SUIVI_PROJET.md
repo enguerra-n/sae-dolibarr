@@ -45,4 +45,12 @@
 * Difficultés rencontrées : connexion à la base de données en ligne de commande pour le code de manière sécurisé.
 * Remarques sur la séances (membre absent, pbe technique, ...)
 
+## Séance n° 5
+
+* 12/11 > 8H30 - 11H30
+* Travail effectué : tests d'import de DATA pour la table llx_user + script pour voir toutes les tables + scripts d'import de DATA en format csv
+* A faire à la prochaine séance : continuer le script en effectuant des vérifications.
+* Difficultés rencontrées : structure du script et de la forme de la table llx_user
+* Remarques sur la séances (membre absent, pbe technique, ...)
+
 ...
