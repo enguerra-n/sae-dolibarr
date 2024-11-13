@@ -4,6 +4,8 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: dolibarr
+        volumes:
+            - /home/dolibarr_mariadb:/var/lib/mysql
 
     web:
         image: dolibarr/dolibarr:latest
@@ -20,3 +22,6 @@ services:
             - "80:80"
         links:
             - mariadb
+        volumes:
+            - /home/dolibarr_documents:/var/www/documents
+            - /home/dolibarr_custom:/var/www/html/custom
