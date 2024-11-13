@@ -49,7 +49,7 @@
 
 * 12/11 > 8H30 - 11H30
 * Travail effectué : tests d'import de DATA pour la table llx_user + script pour voir toutes les tables + scripts d'import de DATA en format csv
-* A faire à la prochaine séance : continuer le script en effectuant des vérifications.
+* A faire à la prochaine séance : création scripts preprocesing pour les fichiers csv + finalisation des DockerFile 
 * Difficultés rencontrées : structure du script et de la forme de la table llx_user
 * Remarques sur la séances (membre absent, pbe technique, ...)
 
