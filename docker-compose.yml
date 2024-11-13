@@ -6,6 +6,7 @@ services:
             MYSQL_DATABASE: dolibarr
         volumes:
             - /home/dolibarr_mariadb:/var/lib/mysql
+            
 
     web:
         image: dolibarr/dolibarr:latest
