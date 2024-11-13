@@ -2,8 +2,6 @@
 
 ### Groupe LELOUP LECOQ
 
-#### ETAT D'AVANCEMENT DU PROJET : 10%
-
 * SAE ERP / CRM (Dolibar)
 * Chef de projet : Enguerran LECOQ
 * Autre membre : Quentin LELOUP
