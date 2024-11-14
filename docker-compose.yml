@@ -1,12 +1,12 @@
 services:
     mariadb:
-        image: mariadb:latest
+        build:
+            context: ./mariadb-custom
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: dolibarr
         volumes:
-            - /home/dolibarr_mariadb:/var/lib/mysql
-            
+            - ./mariadb/data:/var/lib/mysql
 
     web:
         image: dolibarr/dolibarr:latest
@@ -24,5 +24,5 @@ services:
         links:
             - mariadb
         volumes:
-            - /home/dolibarr_documents:/var/www/documents
-            - /home/dolibarr_custom:/var/www/html/custom
+            - ./dolibarr/data:/var/www/documents
+            - ./dolibarr/custom:/var/www/html/custom
