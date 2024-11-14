@@ -17,22 +17,20 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
    - Mise en place d'un système de sauvegarde permettant une récupération complète en cas d'incident (PRA).
    - Capacité de restaurer un serveur Dolibarr fonctionnel à partir des sauvegardes existantes.
 
-## 📝 Étapes du Projet
+## 📝 Étapes réalisées
 
 ### 1. **Découverte de Dolibarr** 🔍
-   - Installation initiale sur une VM Debian ou un conteneur Docker pour la prise en main.
-   - Configuration manuelle : base de données, création d'un compte administrateur, ajout de modules, etc.
-   - Première importation des données CSV via les outils intégrés de Dolibarr.
+- www
+- www
 
 ### 2. **Automatisation de l'Import des Données** 🔄
-   - Exploration des options d'import intégrées ou création de scripts d'import personnalisés pour une automatisation complète.
-   - Manipulation directe des tables du SGBD pour optimiser le processus d'importation.
+   -www
+   -www
 
-### 3. **Dockerisation de l'Environnement** 🛠️
-   - Création de Dockerfiles pour une installation propre et segmentée :
-     - Un conteneur pour **Dolibarr**.
-     - Un conteneur pour le **SGBD**.
-   - Tests et évaluation des images Docker existantes de Dolibarr pour choisir la meilleure configuration.
+### 3. **EXEMPLE** 🛠️
+  -www
+  -www
+  
 
 ## 🔗 Liens Utiles
 - [Enterprise Resource Planning (ERP)](https://en.wikipedia.org/wiki/Enterprise_resource_planning)
