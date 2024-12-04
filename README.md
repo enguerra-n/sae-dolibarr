@@ -6,11 +6,10 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 ## 🎯 Objectifs du Projet
 
 ### 1. **Mise en Place de Dolibarr** 🖥️
-   - Installation automatisée de **Dolibarr** et du SGBD requis via un script unique `install.sh`.
-   - Préférence pour une solution **dockerisée** 🐳 afin de faciliter la portabilité et l'indépendance de l'OS.
-
+   - Installation automatisée de **Dolibarr** et du SGBD requis via un docker-compose.
+     
 ### 2. **Import des Données** 📂
-   - Import des données (clients, fournisseurs, factures, commandes, etc.) depuis l'ancien système via un script unique `import_csv.sh`.
+   - Import des données (clients, fournisseurs, factures, commandes, etc.) depuis l'ancien système via un script unique.
    - Possibilité de manipulation directe du SGBD pour automatiser l'importation des données.
 
 ### 3. **Sauvegarde et Récupération des Données** 💾
@@ -22,7 +21,7 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 ### Origine et Développement 🚀  
 - **Origine** : Dolibarr est un logiciel open source lancé en 2003 par **Laurent Destailleur**. Initialement conçu comme un ERP/CRM simple et léger, il vise les petites et moyennes entreprises (PME), les indépendants, et les associations.  
 - **Développement** : Le projet est principalement maintenu par une communauté internationale d'utilisateurs et de développeurs.  
-- **Rythme de release** : Dolibarr suit un cycle de mise à jour régulier, avec des versions publiées environ tous les 6 à 12 mois.  
+- **Rythme de release** : Dolibarr suit un cycle de mise à jour régulier, avec des versions majeures publiées environ tous les 6 à 12 mois.  
 
 ### Communauté et Support 💬  
 - **Forums** : Une communauté active est présente sur le forum officiel de Dolibarr, avec des discussions sur des sujets variés (installation, modules, erreurs, personnalisation, etc.).  
@@ -34,7 +33,7 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 - Gratuit et open source.  
 - Installation facile et légère, même sur des serveurs peu puissants.  
 - Très modulable : les utilisateurs peuvent activer ou désactiver les modules selon leurs besoins.  
-- Une grande communauté 
+- Une grande communauté offrant des ressources et une assistance gratuite.  
 - Disponible sur une large variété de plateformes (Windows, Linux, Docker, etc.).  
 
 **Points faibles** :  
@@ -61,17 +60,35 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 - Premières manipulations
 
 ### 2. **Automatisation de l'Import des Données** 🔄
-- Création du srcypt d'import des données
+- Création du script d'import des données pour une table `import-table.sh`
+- Un listing de toute les tables existantes avec `list-table.sh`
 
 ### 3. **Mise en place d'une automatisation de sauvegarde**
-- Création du scrypt de sauvegarde de données périodique Mariadb
-- Création du scrypt d'import de sauvegarde Mariadb dans Dolibarr
-  
+- Création du script de sauvegarde de données périodique Mariadb `backup_mariadb.sh`, qui est compris dans une crontab installé lors du build de l'image mariadb avec le script `install-cron.sh`
+- Création du script d'import de sauvegarde Mariadb dans Dolibarr
+- ajustement des fichiers csv pour qu'ils correspondent pour les colonnes avec `csv_ordering.py`
+- Possible de redéployer la BDD avec le script `restore_mariadb.sh`
+
+
+## 🛠️ **Axes d'amélioration**
+ 
+
+1. **Documentation** :  
+   - Compléter une documentation claire pour chaque script (installation, import, sauvegarde).  
+   - Inclure des tutoriels pour les utilisateurs non techniques.  
+
+2. **Sécurité** :  
+   - Mettre en place des politiques de sauvegarde chiffrées.
+     
+3. **Optimisation des scripts ** :  
+   - archiver les fichiers de sauvegarde afin de consommer moins de DATA en stockage.
+   - rendre possible l'execution des scripts agissants sur la BDD depuis la machine hôte. 
+
+
 ## 🔗 Liens Utiles
 - [Enterprise Resource Planning (ERP)](https://en.wikipedia.org/wiki/Enterprise_resource_planning)
 - [Customer Relationship Management (CRM)](https://en.wikipedia.org/wiki/Customer_relationship_management)
 
 ## ⚠️ Statut du Projet
 **🚧 Ce projet est en cours de développement. La page est en cours de création !**  
-*(Mise à jour en novembre 2024)*  
-```
+*(Mise à jour en décembre 2024)*  
