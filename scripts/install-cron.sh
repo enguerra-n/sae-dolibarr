@@ -6,7 +6,7 @@ apt-get update -y
 apt-get install -y cron
 
 # Vérifier si le script export-dump.sh existe
-SCRIPT_PATH="/chemin/vers/le/script/export-dump.sh"
+SCRIPT_PATH="/home/script/backup_mariadb.sh"
 if [[ ! -f "$SCRIPT_PATH" ]]; then
     echo "Erreur : Le fichier $SCRIPT_PATH n'existe pas."
     exit 1

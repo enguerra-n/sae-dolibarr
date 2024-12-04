@@ -11,8 +11,8 @@
 # Variables
 DB_USER="root"
 DB_PASSWORD="root"
-DB_NAME="nom_de_votre_base"
-BACKUP_DIR="/chemin/vers/le/dossier_de_sauvegarde"
+DB_NAME="dolibarr"
+BACKUP_DIR="/var/lib/backup-mariadb/"
 DATE=$(date +'%Y-%m-%d_%H-%M-%S')
 
 # Création du répertoire de sauvegarde s'il n'existe pas

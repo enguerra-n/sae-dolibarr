@@ -1,13 +1,13 @@
 services:
     mariadb:
         container_name : mariadb
-        build:
-            context: ./mariadb-custom
+        build: .
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: dolibarr
         volumes:
             - ./mariadb:/var/lib/mysql
+            - ./scripts:/home/script/
 
     web:
         container_name : dolibarr
@@ -28,3 +28,5 @@ services:
         volumes:
             - ./dolibarr_documents:/var/www/documents
             - ./dolibarr_custom:/var/www/html/custom
+        depends_on:
+            - mariadb

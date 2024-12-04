@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Dolibarr installer">
+<link rel="stylesheet" type="text/css" href="default.css">
+<!-- Includes CSS for JQuery -->
+<link rel="stylesheet" type="text/css" href="../includes/jquery/css/base/jquery-ui.min.css" />
+<!-- Includes JS for JQuery -->
+<script type="text/javascript" src="../includes/jquery/js/jquery.min.js"></script>
+<script type="text/javascript" src="../includes/jquery/js/jquery-ui.min.js"></script>
+<title>Dolibarr install or upgrade</title>
+</head>
+<body>
+<div class="divlogoinstall" style="text-align:center"><img class="imglogoinstall" src="../theme/dolibarr_logo.svg" alt="Dolibarr logo" width="300px"><br>20.0.0</div><br><span class="titre">Dolibarr install or upgrade</span>
+<form name="forminstall" id="forminstall" class="centpercent" action="upgrade2.php?versionfrom=20.0.0&versionto=" method="POST">
+<input type="hidden" name="testpost" value="ok">
+<input type="hidden" name="action" value="">
+<div id="divinstall"><table class="main centpercent"><tr><td>
+<table class="main-inside main-inside-borderbottom centpercent"><tr><td>
+<h3><img class="valignmiddle inline-block paddingright" src="../theme/common/octicons/build/svg/database.svg" width="20" alt="Database"> <span class="inline-block">Database migration (structure + some data)</span></h3><table cellspacing="0" cellpadding="1" border="0" width="100%"><tr><td class="nowrap">Server connection : mariadb</td><td class="right"><span class="neutral">OK</span></td></tr>
+<tr><td class="nowrap">Database connection : dolibarr</td><td class="right"><span class="neutral">OK</span></td></tr>
+<tr><td>Database server version</td><td class="right">10.11.5-MariaDB-1:10.11.5+maria~ubu2204</td></tr><tr><td>Client charset</td><td class="right">utf8mb4</td></tr><tr><td>Client collation</td><td class="right">utf8mb4_general_ci</td></tr><tr><td colspan="2"><span class="opacitymedium messagebepatient">Please be patient...</span></td></tr></table><table cellspacing="0" cellpadding="1" border="0" width="100%"><div class="error">No migration file found for the selected versions</div></table></td></tr></table>
+</td></tr></table>
+<!-- pFooter -->
+</div><div class="nextbutton" id="nextbutton"><span class="warning">Error(s) were reported during the migration process so next step is not available. To ignore errors, you can <a href="">click here</a>, but the application or some features may not work correctly until the errors are resolved.</span><br><br><input type="submit" disabled="disabled" value="Next step ->"></div><input type="hidden" name="selectlang" value="auto"></form><br>
+
+<!-- Start of log output
+2024-12-04 17:24:14 DEBUG        51       0 --- upgrade: entering upgrade.php page 20.0.0 <br>
+2024-12-04 17:24:14 DEBUG        51       0 DoliDBMysqli::connect host=mariadb, port=3306, login=root, passwd=--hidden--, name=<br>
+2024-12-04 17:24:14 DEBUG        51       0 DoliDBMysqli::select_db database=dolibarr<br>
+2024-12-04 17:24:14 DEBUG        51       0 upgrade: Server connection: mariadb OK<br>
+2024-12-04 17:24:14 DEBUG        51       0 upgrade: Database connection successful: dolibarr<br>
+2024-12-04 17:24:14 DEBUG        51       0 upgrade: Database server version: 10.11.5-MariaDB-1:10.11.5+maria~ubu2204<br>
+2024-12-04 17:24:14 DEBUG        51       0 upgrade: Client charset: utf8mb4<br>
+2024-12-04 17:24:14 DEBUG        51       0 upgrade: ClientCollation: utf8mb4_general_ci<br>
+2024-12-04 17:24:15 DEBUG        51       0 Clean database from bad named constraints<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW TABLES FROM `dolibarr` ;<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_accounting_account<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_accounting_bookkeeping<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_accounting_bookkeeping_tmp<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_accounting_fiscalyear<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_accounting_groups_account<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_accounting_journal<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_accounting_system<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_actioncomm<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_actioncomm_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_actioncomm_reminder<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_actioncomm_resources<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_adherent<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_adherent_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_adherent_type<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_adherent_type_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_adherent_type_lang<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_asset<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_asset_accountancy_codes_economic<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_asset_accountancy_codes_fiscal<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_asset_depreciation<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_asset_depreciation_options_economic<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_asset_depreciation_options_fiscal<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_asset_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_asset_model<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_asset_model_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bank<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bank_account<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bank_account_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bank_categ<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bank_class<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bank_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bank_url<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_blockedlog<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_blockedlog_authority<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bom_bom<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bom_bom_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bom_bomline<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bom_bomline_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bookcal_availabilities<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bookcal_availabilities_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bookcal_calendar<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bookcal_calendar_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bookmark<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_bordereau_cheque<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_boxes<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_boxes_def<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_budget<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_budget_lines<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_accounting_category<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_action_trigger<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_actioncomm<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_asset_disposal_type<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_availability<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_barcode_type<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_chargesociales<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_civility<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_country<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_currencies<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_departements<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_ecotaxe<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_effectif<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_email_senderprofile<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_email_templates<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_exp_tax_cat<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_exp_tax_range<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_field_list<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_format_cards<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_forme_juridique<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_holiday_types<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_hrm_department<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_hrm_function<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_hrm_public_holiday<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_incoterms<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_input_method<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_input_reason<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_invoice_subtype<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_lead_status<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_paiement<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_paper_format<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_partnership_type<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_payment_term<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_price_expression<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_price_global_variable<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_price_global_variable_updater<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_product_nature<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_product_thirdparty_relation_type<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_productbatch_qcstatus<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_propalst<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_prospectcontactlevel<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_prospectlevel<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_recruitment_origin<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_regions<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_revenuestamp<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_shipment_mode<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_shipment_package_type<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_socialnetworks<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_stcomm<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_stcommcontact<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_ticket_category<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_ticket_resolution<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_ticket_severity<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_ticket_type<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_transport_mode<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_tva<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_type_contact<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_type_container<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_type_fees<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_type_resource<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_typent<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_units<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_c_ziptown<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_account<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_actioncomm<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_contact<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_fournisseur<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_knowledgemanagement<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_lang<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_member<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_product<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_project<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_societe<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_ticket<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_user<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_warehouse<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categorie_website_page<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_categories_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_chargesociales<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_commande<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_commande_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_commande_fournisseur<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_commande_fournisseur_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_commande_fournisseur_log<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_commande_fournisseurdet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_commande_fournisseurdet_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_commandedet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_commandedet_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_comment<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_const<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_contrat<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_contrat_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_contratdet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_contratdet_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_cronjob<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_default_values<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_delivery<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_delivery_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_deliverydet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_deliverydet_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_deplacement<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_document_model<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_don<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_don_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_ecm_directories<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_ecm_directories_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_ecm_files<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_ecm_files_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_element_categorie<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_element_contact<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_element_element<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_element_resources<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_element_time<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_emailcollector_emailcollector<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_emailcollector_emailcollectoraction<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_emailcollector_emailcollectorfilter<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_entrepot<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_entrepot_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_establishment<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_event_element<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_eventorganization_conferenceorboothattendee<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_eventorganization_conferenceorboothattendee_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_events<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_expedition<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_expedition_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_expedition_package<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_expeditiondet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_expeditiondet_batch<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_expeditiondet_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_expensereport<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_expensereport_det<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_expensereport_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_expensereport_ik<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_expensereport_rules<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_export_model<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture_fourn<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture_fourn_det<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture_fourn_det_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture_fourn_det_rec<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture_fourn_det_rec_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture_fourn_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture_fourn_rec<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture_fourn_rec_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture_rec<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facture_rec_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facturedet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facturedet_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facturedet_rec<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_facturedet_rec_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_fichinter<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_fichinter_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_fichinter_rec<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_fichinterdet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_fichinterdet_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_fichinterdet_rec<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_holiday<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_holiday_config<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_holiday_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_holiday_logs<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_holiday_users<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_hrm_evaluation<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_hrm_evaluation_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_hrm_evaluationdet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_hrm_evaluationdet_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_hrm_job<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_hrm_job_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_hrm_job_user<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_hrm_skill<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_hrm_skill_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_hrm_skilldet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_hrm_skillrank<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_import_model<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_intracommreport<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_inventory<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_inventory_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_inventorydet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_knowledgemanagement_knowledgerecord<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_knowledgemanagement_knowledgerecord_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_links<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_loan<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_loan_schedule<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_localtax<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_mailing<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_mailing_advtarget<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_mailing_cibles<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_mailing_unsubscribe<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_menu<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_mrp_mo<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_mrp_mo_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_mrp_production<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_mrp_production_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_multicurrency<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_multicurrency_rate<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_notify<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_notify_def<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_notify_def_object<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_oauth_state<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_oauth_token<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_object_lang<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_onlinesignature<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_opensurvey_comments<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_opensurvey_formquestions<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_opensurvey_sondage<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_opensurvey_user_formanswers<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_opensurvey_user_studs<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_overwrite_trans<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_paiement<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_paiement_facture<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_paiementcharge<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_paiementfourn<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_paiementfourn_facturefourn<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_partnership<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_partnership_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_payment_donation<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_payment_expensereport<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_payment_loan<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_payment_salary<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_payment_various<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_payment_vat<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_pos_cash_fence<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_prelevement<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_prelevement_bons<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_prelevement_demande<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_prelevement_lignes<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_prelevement_rejet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_printing<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_association<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_attribute<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_attribute_combination<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_attribute_combination2val<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_attribute_combination_price_level<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_attribute_value<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_batch<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_customer_price<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_customer_price_log<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_fournisseur_price<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_fournisseur_price_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_fournisseur_price_log<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_lang<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_lot<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_lot_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_perentity<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_price<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_price_by_qty<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_pricerules<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_stock<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_thirdparty<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_product_warehouse_properties<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_projet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_projet_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_projet_task<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_projet_task_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_propal<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_propal_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_propal_merge_pdf_product<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_propaldet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_propaldet_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_reception<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_reception_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_receptiondet_batch<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_receptiondet_batch_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_recruitment_recruitmentcandidature<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_recruitment_recruitmentcandidature_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_recruitment_recruitmentjobposition<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_recruitment_recruitmentjobposition_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_resource<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_resource_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_rights_def<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_salary<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_salary_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_session<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_societe<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_societe_account<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_societe_commerciaux<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_societe_contacts<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_societe_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_societe_perentity<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_societe_prices<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_societe_remise<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_societe_remise_except<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_societe_remise_supplier<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_societe_rib<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_socpeople<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_socpeople_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_stock_mouvement<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_stock_mouvement_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_stocktransfer_stocktransfer<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_stocktransfer_stocktransfer_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_stocktransfer_stocktransferline<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_stocktransfer_stocktransferline_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_subscription<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_supplier_proposal<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_supplier_proposal_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_supplier_proposaldet<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_supplier_proposaldet_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_takepos_floor_tables<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_ticket<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_ticket_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_tva<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_user<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_user_alert<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_user_clicktodial<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_user_employment<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_user_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_user_param<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_user_rib<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_user_rights<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_usergroup<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_usergroup_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_usergroup_rights<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_usergroup_user<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_webhook_target<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_website<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_website_extrafields<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_website_page<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_workstation_workstation<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_workstation_workstation_resource<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_workstation_workstation_usergroup<br>
+2024-12-04 17:24:15 DEBUG        51       0 sql=SHOW CREATE TABLE llx_zapier_hook<br>
+2024-12-04 17:24:15 DEBUG        51       0 Scan sql files for migration files in mysql/migration/<br>
+2024-12-04 17:24:15 DEBUG        51       0 Exit 1<br>
+2024-12-04 17:24:15 DEBUG        51       0 --- upgrade: end 1 dirmodule=<br>
+End of log output -->
+
+</body>
+</html>
