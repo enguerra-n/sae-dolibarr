@@ -22,7 +22,7 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 ### Origine et Développement 🚀  
 - **Origine** : Dolibarr est un logiciel open source lancé en 2003 par **Laurent Destailleur**. Initialement conçu comme un ERP/CRM simple et léger, il vise les petites et moyennes entreprises (PME), les indépendants, et les associations.  
 - **Développement** : Le projet est principalement maintenu par une communauté internationale d'utilisateurs et de développeurs.  
-- **Rythme de release** : Dolibarr suit un cycle de mise à jour régulier, avec des versions publiées environ tous les 6 à 12 mois.  
+- **Rythme de release** : Dolibarr suit un cycle de mise à jour régulier, avec des versions majeures publiées environ tous les 6 à 12 mois.  
 
 ### Communauté et Support 💬  
 - **Forums** : Une communauté active est présente sur le forum officiel de Dolibarr, avec des discussions sur des sujets variés (installation, modules, erreurs, personnalisation, etc.).  
@@ -34,7 +34,7 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 - Gratuit et open source.  
 - Installation facile et légère, même sur des serveurs peu puissants.  
 - Très modulable : les utilisateurs peuvent activer ou désactiver les modules selon leurs besoins.  
-- Une grande communauté 
+- Une grande communauté offrant des ressources et une assistance gratuite.  
 - Disponible sur une large variété de plateformes (Windows, Linux, Docker, etc.).  
 
 **Points faibles** :  
@@ -66,7 +66,37 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 ### 3. **Mise en place d'une automatisation de sauvegarde**
 - Création du scrypt de sauvegarde de données périodique Mariadb
 - Création du scrypt d'import de sauvegarde Mariadb dans Dolibarr
-  
+
+## 🛠️ **Axes d'amélioration**
+
+1. **Amélioration des scripts** :  
+   - Rendre les scripts `install.sh` et `import_csv.sh` plus robustes avec une gestion des erreurs améliorée.  
+   - Ajouter des messages d’état pour informer l’utilisateur de chaque étape.  
+
+2. **Documentation** :  
+   - Compléter une documentation claire pour chaque script (installation, import, sauvegarde).  
+   - Inclure des tutoriels pour les utilisateurs non techniques.  
+
+3. **Tests automatisés** :  
+   - Mettre en place des tests pour valider l’installation, l’importation, et la restauration des données.  
+   - Vérifier la compatibilité avec plusieurs versions de Dolibarr et SGBD.  
+
+4. **Personnalisation** :  
+   - Créer des modèles de factures et rapports adaptés aux besoins spécifiques de l’entreprise.  
+   - Ajouter des modules supplémentaires si nécessaire.  
+
+5. **Sécurité** :  
+   - Mettre en place des politiques de sauvegarde encryptées.  
+   - Ajouter un pare-feu applicatif et vérifier la sécurité des accès (authentification forte).  
+
+6. **Optimisation des performances** :  
+   - Tester Dolibarr avec des volumes importants de données pour évaluer les performances.  
+   - Optimiser les requêtes SQL si nécessaire pour les temps de réponse.  
+
+7. **Formation des utilisateurs** :  
+   - Créer une formation pour les employés sur l’utilisation des principales fonctionnalités.  
+   - Préparer un guide utilisateur simplifié.  
+
 ## 🔗 Liens Utiles
 - [Enterprise Resource Planning (ERP)](https://en.wikipedia.org/wiki/Enterprise_resource_planning)
 - [Customer Relationship Management (CRM)](https://en.wikipedia.org/wiki/Customer_relationship_management)
@@ -74,4 +104,3 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 ## ⚠️ Statut du Projet
 **🚧 Ce projet est en cours de développement. La page est en cours de création !**  
 *(Mise à jour en novembre 2024)*  
-```
