@@ -21,12 +21,12 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 
 ### 1. **Découverte de Dolibarr** 🔍
 - Visite du site Web du constructeur
-- Installation de dolibar en Docker
-- Premières manipulations 
+- Création du Dockerfile
+- Ouverture de la page web
+- Premières manipulations
 
 ### 2. **Automatisation de l'Import des Données** 🔄
-   -www
-   -www
+   -Création du srcypt d'import des données
   
 ## 🔗 Liens Utiles
 - [Enterprise Resource Planning (ERP)](https://en.wikipedia.org/wiki/Enterprise_resource_planning)
