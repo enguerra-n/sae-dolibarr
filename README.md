@@ -89,4 +89,4 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 
 ## ⚠️ Statut du Projet
 **🚧 Ce projet est en cours de développement. La page est en cours de création !**  
-*(Mise à jour en novembre 2024)*  
+*(Mise à jour en décembre 2024)*  
