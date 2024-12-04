@@ -4,3 +4,4 @@ créer un script qui fait du processing csv pour l'import de DATA dans les table
 Connaître le rôle de chaques tables de la BDD
 dans le docker compose -> ajout de nom pour les conteneures
 savoir comment avoir des modules pré-installé dans le docker compose ou autre
+sur le dockerfile de mariadb, faire un script qui install la crontab + import des script à l'intérieure de celle-ci
