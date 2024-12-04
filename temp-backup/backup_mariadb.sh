@@ -1,8 +1,16 @@
+#Enregistrez le fichier et rendez-le exécutable : chmod +x backup_mariadb.sh
+#Planifier une exécution automatique avec cron : crontab -e
+#Ajoutez une ligne pour exécuter le script à une heure spécifique. Par exemple, pour une sauvegarde quotidienne 
+#à 3h du matin : 0 3 * * * /chemin/vers/backup_mariadb.sh >> /chemin/vers/logs/backup.log 2>&1
+#Testez manuellement pour vérifier que tout fonctionne correctement :./backup_mariadb.sh
+
+
+
 #!/bin/bash
 
 # Variables
-DB_USER="votre_utilisateur"
-DB_PASSWORD="votre_mot_de_passe"
+DB_USER="root"
+DB_PASSWORD="root"
 DB_NAME="nom_de_votre_base"
 BACKUP_DIR="/chemin/vers/le/dossier_de_sauvegarde"
 DATE=$(date +'%Y-%m-%d_%H-%M-%S')
