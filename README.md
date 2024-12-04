@@ -10,7 +10,7 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
    - Préférence pour une solution **dockerisée** 🐳 afin de faciliter la portabilité et l'indépendance de l'OS.
 
 ### 2. **Import des Données** 📂
-   - Import des données (clients, fournisseurs, factures, commandes, etc.) depuis l'ancien système via un script unique `import_csv.sh`.
+   - Import des données (clients, fournisseurs, factures, commandes, etc.) depuis l'ancien système via un script unique `restore_mariadb.sh`.
    - Possibilité de manipulation directe du SGBD pour automatiser l'importation des données.
 
 ### 3. **Sauvegarde et Récupération des Données** 💾
@@ -61,11 +61,13 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 - Premières manipulations
 
 ### 2. **Automatisation de l'Import des Données** 🔄
-- Création du srcypt d'import des données
+- Création du srcypt d'import des données pour une table `import-table.sh`
 
 ### 3. **Mise en place d'une automatisation de sauvegarde**
-- Création du scrypt de sauvegarde de données périodique Mariadb
+- Création du scrypt de sauvegarde de données périodique Mariadb `backup_mariadb.sh`, qui est compris dans une crontab installé lors du build de l'image mariadb avec le script `install-cron.sh`
 - Création du scrypt d'import de sauvegarde Mariadb dans Dolibarr
+- ajustement des fichiers csv pour qu'ils correspondent pour les colonnes avec `csv_ordering.py`
+- un listing de toute les tables existantes avec `list-table.sh`
 
 ## 🛠️ **Axes d'amélioration**
  
@@ -75,12 +77,11 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
    - Inclure des tutoriels pour les utilisateurs non techniques.  
 
 2. **Sécurité** :  
-   - Mettre en place des politiques de sauvegarde encryptées.  
-   - Ajouter un pare-feu applicatif et vérifier la sécurité des accès (authentification forte).  
-
-3. **Optimisation des performances** :  
-   - Rendre les fichiers de sauvagrdes plus léger pour fluidifier le trafic réseau
-   - Optimiser les requêtes SQL si nécessaire pour les temps de réponse.  
+   - Mettre en place des politiques de sauvegarde chiffrées.
+     
+3. **Optimisation des scripts ** :  
+   - archiver les fichiers de sauvegarde afin de consommer moins de DATA en stockage.
+   - rendre possible l'execution des scripts agissants sur la BDD depuis la machine hôte. 
 
 
 ## 🔗 Liens Utiles
