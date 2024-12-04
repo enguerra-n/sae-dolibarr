@@ -54,9 +54,25 @@
 
 ## Séance n° 6
 
-* 07/11 > 13H00 - 16H00
+* 12/11 > 13H00 - 16H00
 * Travail effectué : mettre une build image pour mariadb + ajout des volumes
 * A faire à la prochaine séance : réussir a se connecter a dolibarr
 * Difficultés rencontrées : connexion à dolibarr impossible, erreur "wrong login or password"
 * Remarques sur la séances (membre absent, pbe technique, ...) : problème de connexion sur dolibarr non résolu
+
+## Séance n° 7
+
+* 04/12 > 8H30 - 11H30
+* Travail effectué : créer un script qui ajoute dans la crontab le script d'export dump de la BDD + dans le docker compose ajout de nom pour les conteneures + ajout de volumes bind mount
+* A faire à la prochaine séance : faire script modification csv + backup + import backup
+* Difficultés rencontrées : 
+* Remarques sur la séances (membre absent, pbe technique, ...) : 
+
+## Séance n° 8
+
+* 04/12 > 13H00 - 17H30
+* Travail effectué : ajustement du dockerfile (installation de la cron pour sauvegarde journalière) et docker-compose + création des scripts modification csv + backup BDD + import backup BDD
+* A faire à la prochaine séance : voir pour activer tous les modules directement
+* Difficultés rencontrées : 
+* Remarques sur la séances (membre absent, pbe technique, ...) : 
 ...
