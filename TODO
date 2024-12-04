@@ -1,0 +1,6 @@
+créer un script qui fait un dump de la BDD + un script qui permet d'importer un dump de la BDD
+créer un script qui ajoute dans la crontab le script d'export dump de la BDD
+créer un script qui fait du processing csv pour l'import de DATA dans les tables de la BDD
+Connaître le rôle de chaques tables de la BDD
+dans le docker compose -> ajout de nom pour les conteneures
+savoir comment avoir des modules pré-installé dans le docker compose ou autre
