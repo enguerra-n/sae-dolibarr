@@ -22,7 +22,7 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 ### Origine et Développement 🚀  
 - **Origine** : Dolibarr est un logiciel open source lancé en 2003 par **Laurent Destailleur**. Initialement conçu comme un ERP/CRM simple et léger, il vise les petites et moyennes entreprises (PME), les indépendants, et les associations.  
 - **Développement** : Le projet est principalement maintenu par une communauté internationale d'utilisateurs et de développeurs.  
-- **Rythme de release** : Dolibarr suit un cycle de mise à jour régulier, avec des versions majeures publiées environ tous les 6 à 12 mois.  
+- **Rythme de release** : Dolibarr suit un cycle de mise à jour régulier, avec des versions publiées environ tous les 6 à 12 mois.  
 
 ### Communauté et Support 💬  
 - **Forums** : Une communauté active est présente sur le forum officiel de Dolibarr, avec des discussions sur des sujets variés (installation, modules, erreurs, personnalisation, etc.).  
@@ -34,7 +34,7 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 - Gratuit et open source.  
 - Installation facile et légère, même sur des serveurs peu puissants.  
 - Très modulable : les utilisateurs peuvent activer ou désactiver les modules selon leurs besoins.  
-- Une grande communauté offrant des ressources et une assistance gratuite.  
+- Une grande communauté 
 - Disponible sur une large variété de plateformes (Windows, Linux, Docker, etc.).  
 
 **Points faibles** :  
