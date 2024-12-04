@@ -26,7 +26,7 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 - Premières manipulations
 
 ### 2. **Automatisation de l'Import des Données** 🔄
-   -Création du srcypt d'import des données
+- Création du srcypt d'import des données
   
 ## 🔗 Liens Utiles
 - [Enterprise Resource Planning (ERP)](https://en.wikipedia.org/wiki/Enterprise_resource_planning)
