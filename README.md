@@ -21,13 +21,17 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 
 ### 1. **Découverte de Dolibarr** 🔍
 - Visite du site Web du constructeur
-- Création du Dockerfile
+- Création du Dockerfile pour déploiement
 - Création de la base de données Mariadb
 - Ouverture de la page web
 - Premières manipulations
 
 ### 2. **Automatisation de l'Import des Données** 🔄
 - Création du srcypt d'import des données
+
+### 3. **Mise en place d'une automatisation de sauvegarde**
+- Création du scrypt de sauvegarde de données périodique Mariadb
+- Création du scrypt d'import de sauvegarde Mariadb dans Dolibarr
   
 ## 🔗 Liens Utiles
 - [Enterprise Resource Planning (ERP)](https://en.wikipedia.org/wiki/Enterprise_resource_planning)
