@@ -2,11 +2,11 @@
 
 # Mettre à jour le système et installer crontab si nécessaire
 echo "Mise à jour du système et installation de crontab..."
-sudo apt-get update -y
-sudo apt-get install -y cron
+apt-get update -y
+apt-get install -y cron
 
 # Vérifier si le script export-dump.sh existe
-SCRIPT_PATH="/tmp/backup_mariadb.sh"
+SCRIPT_PATH="/chemin/vers/le/script/export-dump.sh"
 if [[ ! -f "$SCRIPT_PATH" ]]; then
     echo "Erreur : Le fichier $SCRIPT_PATH n'existe pas."
     exit 1
@@ -22,12 +22,12 @@ crontab -l
 
 # Vérifier si le service cron est en cours d'exécution
 echo "Vérification de l'état du service cron..."
-if systemctl is-active --quiet cron; then
+if service cron status | grep -q 'running'; then
     echo "Le service cron est en cours d'exécution."
 else
     echo "Le service cron n'est pas en cours d'exécution. Tentative de démarrage..."
-    sudo systemctl start cron
-    if systemctl is-active --quiet cron; then
+    service cron start
+    if service cron status | grep -q 'running'; then
         echo "Le service cron a été démarré avec succès."
     else
         echo "Échec du démarrage du service cron. Veuillez vérifier les logs."
