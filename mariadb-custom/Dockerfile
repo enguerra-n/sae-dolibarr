@@ -7,6 +7,6 @@ ENV MYSQL_ROOT_PASSWORD=root
 # Créer un dossier pour les scripts d'initialisation
 COPY ./scripts /tmp/script
 
-COPY ./data /tmp/data
+#COPY ./data /tmp/data
 
 #RUN ./test.sh -t llx_user -c /tmp/data/user1
