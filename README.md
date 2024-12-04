@@ -6,7 +6,7 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 ## 🎯 Objectifs du Projet
 
 ### 1. **Mise en Place de Dolibarr** 🖥️
-   - Installation automatisée de **Dolibarr** et du SGBD requis via un script unique `install.sh`.
+   - Installation automatisée de **Dolibarr** et du SGBD requis via un docker-compose.
    - Préférence pour une solution **dockerisée** 🐳 afin de faciliter la portabilité et l'indépendance de l'OS.
 
 ### 2. **Import des Données** 📂
