@@ -22,6 +22,7 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 ### 1. **Découverte de Dolibarr** 🔍
 - Visite du site Web du constructeur
 - Création du Dockerfile
+- Création de la base de données Mariadb
 - Ouverture de la page web
 - Premières manipulations
 
