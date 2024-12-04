@@ -68,34 +68,20 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 - Création du scrypt d'import de sauvegarde Mariadb dans Dolibarr
 
 ## 🛠️ **Axes d'amélioration**
+ 
 
-1. **Amélioration des scripts** :  
-   - Rendre les scripts `install.sh` et `import_csv.sh` plus robustes avec une gestion des erreurs améliorée.  
-   - Ajouter des messages d’état pour informer l’utilisateur de chaque étape.  
-
-2. **Documentation** :  
+1. **Documentation** :  
    - Compléter une documentation claire pour chaque script (installation, import, sauvegarde).  
    - Inclure des tutoriels pour les utilisateurs non techniques.  
 
-3. **Tests automatisés** :  
-   - Mettre en place des tests pour valider l’installation, l’importation, et la restauration des données.  
-   - Vérifier la compatibilité avec plusieurs versions de Dolibarr et SGBD.  
-
-4. **Personnalisation** :  
-   - Créer des modèles de factures et rapports adaptés aux besoins spécifiques de l’entreprise.  
-   - Ajouter des modules supplémentaires si nécessaire.  
-
-5. **Sécurité** :  
+2. **Sécurité** :  
    - Mettre en place des politiques de sauvegarde encryptées.  
    - Ajouter un pare-feu applicatif et vérifier la sécurité des accès (authentification forte).  
 
-6. **Optimisation des performances** :  
-   - Tester Dolibarr avec des volumes importants de données pour évaluer les performances.  
+3. **Optimisation des performances** :  
+   - Rendre les fichiers de sauvagrdes plus léger pour fluidifier le trafic réseau
    - Optimiser les requêtes SQL si nécessaire pour les temps de réponse.  
 
-7. **Formation des utilisateurs** :  
-   - Créer une formation pour les employés sur l’utilisation des principales fonctionnalités.  
-   - Préparer un guide utilisateur simplifié.  
 
 ## 🔗 Liens Utiles
 - [Enterprise Resource Planning (ERP)](https://en.wikipedia.org/wiki/Enterprise_resource_planning)
