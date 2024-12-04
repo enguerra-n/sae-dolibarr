@@ -1,12 +1,9 @@
-# Utiliser l'image MariaDB de base
-FROM mariadb:latest
+FROM mariadb:10.11.5
 
-# Définir la variable d'environnement pour le mot de passe root
+# définition du mot de passe root
 ENV MYSQL_ROOT_PASSWORD=root
 
-# Créer un dossier pour les scripts d'initialisation
 COPY ./scripts /tmp/script
 
-#COPY ./data /tmp/data
-
+RUN ./tmp/script/install-cron.sh
 #RUN ./test.sh -t llx_user -c /tmp/data/user1

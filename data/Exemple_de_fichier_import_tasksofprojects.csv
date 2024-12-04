@@ -1,2 +1,0 @@
-Ref projet* (t.fk_projet),Ref. tâche* (t.ref),Libellé tâche* (t.label),Date début (t.dateo),Date fin (t.datee),Charge de travail prévue (t.planned_workload),Progression (t.progress),Note (privée) (t.note_private),Note (publique) (t.note_public),Date création (t.datec)
-MyProjectRef,auto or TK2010-1234,My task,,,,0 (not started) to 100 (finished),My private note,My public note,1972-10-10

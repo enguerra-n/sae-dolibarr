@@ -1,2 +1,0 @@
-Ref projet* (t.ref),Libellé* (t.title),Description (t.description),Nom du tiers (t.fk_soc),Public (t.public),État (t.fk_statut),Statut opportunité (t.fk_opp_status),Probabilité d'opportunité (t.opp_percent),Montant opportunité (t.opp_amount),Note (publique) (t.note_public),Note (privée) (t.note_private),Budget (t.budget_amount),Date début (t.dateo),Date fin (t.datee)
-auto or PJ2010-1234,My project,,ThirdParty,,0/1 or 2,,,,My public note,My private note,,,

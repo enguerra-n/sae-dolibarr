@@ -1,2 +1,0 @@
-Libellé* (ca.label),Type* (ca.type),Description (ca.description),Tag/catégorie parent (ca.fk_parent)
-My Category Label,1=Supplier / 2=Customer-Prospect / 4=Contact / 6=Project / 7=User / 10=Agenda event,My Category description,rowid or label

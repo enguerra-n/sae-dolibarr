@@ -1,2 +1,0 @@
-Commande client* (cd.fk_commande),ID de la ligne parent (cd.fk_parent_line),IdProduct (cd.fk_product),Description de ligne (cd.description),Taux de TVA de la ligne (cd.tva_tx),Quantité pour la ligne (cd.qty),Reduc. Percent (cd.remise_percent),Prix (cd.price),Sub Price (cd.subprice),Montant HT de la ligne (cd.total_ht),Montant TVA de la ligne (cd.total_tva),Montant TTC de la ligne (cd.total_ttc),Type de ligne (0=produit/ 1=service) (cd.product_type),Start Date (cd.date_start),End Date (cd.date_end),LineBuyPriceHT (cd.buy_price_ht),LinePosition (cd.rang)
-,,,,,,,,,,,,,,,,

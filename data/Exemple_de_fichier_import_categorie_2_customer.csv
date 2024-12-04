@@ -1,2 +1,0 @@
-Tag/catégorie* (cs.fk_categorie),Client* (cs.fk_soc)
-rowid or label,rowid or name

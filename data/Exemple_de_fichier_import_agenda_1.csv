@@ -1,2 +1,0 @@
-Réf. externe (ac.ref_ext),Réf.* (ac.ref),Date création (ac.datec),Date début événément (ac.datep),Date de fin (ac.datep2),Lieu (ac.location),Titre* (ac.label),Note (ac.note),Pourcentage* (ac.percent),Transparence (ac.transparency),Priorité (ac.priority),Code* (ac.fk_action),Nom du tiers (ac.fk_soc),ProjectRef (ac.fk_project),ModifiedBy (ac.fk_user_mod),Affecté à* (ac.fk_user_action),ElementID (ac.fk_element),Type d'élément (ac.elementtype)
-,,,,,,,,,,,,,,,,,

@@ -1,14 +1,9 @@
-#Rendre le script exécutable :chmod +x restore_mariadb.sh
-#Exécuter le script : ./restore_mariadb.sh
-
-
 #!/bin/bash
-
 # Variables
 DB_USER="root"
 DB_PASSWORD="root"
-DB_NAME="nom_de_votre_base"
-DUMP_FILE="/chemin/vers/le/dump.sql"
+DB_NAME="dolibarr"
+DUMP_FILE="/tmp/data/dolibarr_backup_2024-12-04_14-06-42.sql"
 
 # Vérification de l'existence du fichier dump
 if [ ! -f "$DUMP_FILE" ]; then
@@ -18,7 +13,7 @@ fi
 
 # Importation du dump
 echo "Importation du dump dans la base de données $DB_NAME..."
-mysql -u $DB_USER -p$DB_PASSWORD $DB_NAME < "$DUMP_FILE"
+mariadb -u $DB_USER -p$DB_PASSWORD $DB_NAME < "$DUMP_FILE"
 
 if [ $? -eq 0 ]; then
     echo "Importation terminée avec succès !"
@@ -26,4 +21,3 @@ else
     echo "Erreur lors de l'importation."
     exit 1
 fi
-
