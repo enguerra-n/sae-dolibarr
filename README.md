@@ -60,12 +60,12 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 - Premières manipulations
 
 ### 2. **Automatisation de l'Import des Données** 🔄
-- Création du srcypt d'import des données pour une table `import-table.sh`
+- Création du script d'import des données pour une table `import-table.sh`
 - Un listing de toute les tables existantes avec `list-table.sh`
 
 ### 3. **Mise en place d'une automatisation de sauvegarde**
-- Création du scrypt de sauvegarde de données périodique Mariadb `backup_mariadb.sh`, qui est compris dans une crontab installé lors du build de l'image mariadb avec le script `install-cron.sh`
-- Création du scrypt d'import de sauvegarde Mariadb dans Dolibarr
+- Création du script de sauvegarde de données périodique Mariadb `backup_mariadb.sh`, qui est compris dans une crontab installé lors du build de l'image mariadb avec le script `install-cron.sh`
+- Création du script d'import de sauvegarde Mariadb dans Dolibarr
 - ajustement des fichiers csv pour qu'ils correspondent pour les colonnes avec `csv_ordering.py`
 - Possible de redéployer la BDD avec le script `restore_mariadb.sh`
 
