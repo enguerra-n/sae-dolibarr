@@ -1,3 +1,7 @@
+#Rendre le script exécutable :chmod +x restore_mariadb.sh
+#Exécuter le script : ./restore_mariadb.sh
+
+
 #!/bin/bash
 
 # Variables
