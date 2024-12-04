@@ -1,6 +1,3 @@
-Voici le contenu en format brut Markdown, prêt à être copié :  
-
-```markdown
 # 🚀 Migration ERP/CRM vers Dolibarr
 
 **Projet de migration d'une solution ERP/CRM externalisée vers un système interne basé sur Dolibarr.**  
