@@ -71,6 +71,19 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
    - cron : ce package nous permet de faire une sauvegarde journalière de la BDD
 
    - python3 : afin de pouvoir exécuter le script de traitement csv.
+- pour les users en csv pour la table llx_user, nous les avons généré avec l'IA ChatGPT avec le prompt suivants : 
+>créer moi 5 users pour ce csv stp : 
+Identifiant* (u.login),Nom* (u.lastname),Prénom (u.firstname),Salarié* (u.employee),Poste/fonction (u.job),Genre (u.gender),Code comptable de l'utilisateur (u.accountancy_code),Mot de passe (u.pass_crypted),Administrateur du système (u.admin),Société* (u.fk_soc),Adresse (u.address),Code postal (u.zip),Ville (u.town),ID d'état (u.fk_state),Code pays (u.fk_country),Téléphone (u.office_phone),Mobile (u.user_mobile),Fax (u.office_fax),Email (u.email),Note (publique) (u.note_public),Note (privée) (u.note_private),Signature (u.signature),Responsable hiérarchique (u.fk_user),Tarif horaire moyen (u.thm),Tarif journalier moyen (u.tjm),Heures de travail (par semaine) (u.weeklyhours),Date d'embauche (u.dateemployment),Date de fin d'emploi (u.dateemploymentend),Salaire (u.salary),Couleur (u.color),ApiKey (u.api_key),Date de naissance (u.birth),Date création (u.datec),État (u.statut)
+jdoe,Doe,John,0 or 1,CTO,man or woman,,Encrypted password,,0 (internal user) or company name (external user),61 jump street,123456,Big town,,US/ FR/ DE...,0101010101,,0101010102,test@mycompany.com,This is an example of public note for record,This is an example of private note for record,,,,,,,,10000,,,,2015-01-01 or 2015-01-01 12:30:00,0 (closed) or 1 (active)
+
+nous avons le résultat suivant : 
+>Identifiant*,Nom*,Prénom,Salarié*,Poste/fonction,Genre,Code comptable de l'utilisateur,Mot de passe,Administrateur du système,Société*,Adresse,Code postal,Ville,ID d'état,Code pays,Téléphone,Mobile,Fax,Email,Note (publique),Note (privée),Signature,Responsable hiérarchique,Tarif horaire moyen,Tarif journalier moyen,Heures de travail (par semaine),Date d'embauche,Date de fin d'emploi,Salaire,Couleur,ApiKey,Date de naissance,Date création,État
+jdoe,Doe,John,1,CTO,man,,encrypted123,1,0,123 Innovation Drive,75001,Paris,,FR,0101234567,0601234567,0107654321,jdoe@company.com,"Public note for John Doe","Private note for John Doe",,,50,400,40,2015-01-01,2024-12-04,100000,#FF5733,,1985-04-15,2024-12-04 12:00:00,1
+asmith,Smith,Alice,1,Manager,woman,,encrypted456,0,CompanyX,456 Business Ave,10001,New York,,US,0201234567,0701234567,0207654321,asmith@companyx.com,"Public note for Alice Smith","Private note for Alice Smith",,,45,360,38,2017-06-10,,85000,#33FF57,,1987-08-20,2024-12-04 12:10:00,1
+bcollins,Collins,Bob,1,Analyst,man,,encrypted789,0,CompanyY,789 Analyst Blvd,10115,Berlin,,DE,0301234567,0801234567,0307654321,bcollins@companyy.com,"Public note for Bob Collins","Private note for Bob Collins",,,40,320,35,2019-03-01,,70000,#3357FF,,1992-03-18,2024-12-04 12:20:00,1
+djohnson,Johnson,Diana,1,Designer,woman,,encrypted321,0,CompanyZ,321 Creative Lane,00185,Rome,,IT,0401234567,0901234567,0407654321,djohnson@companyz.com,"Public note for Diana Johnson","Private note for Diana Johnson",,,42,330,37,2018-09-15,,75000,#FF33AA,,1990-12-25,2024-12-04 12:30:00,1
+egarcia,Garcia,Edward,0,Technician,man,,encrypted654,0,CompanyW,654 Tech Street,28001,Madrid,,ES,0501234567,0912345678,0507654321,egarcia@companyw.com,"Public note for Edward Garcia","Private note for Edward Garcia",,,38,300,36,2021-02-01,,60000,#AA33FF,,1995-07-04,2024-12-04 12:40:00,1
+
 
 ### 3. **Automatisation de l'Import des Données** 🔄
 - Création du script d'import des données pour une table `import-table.sh`
