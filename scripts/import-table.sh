@@ -1,5 +1,20 @@
 #!/bin/bash
 
+###########################################
+# Explication du script
+###########################################
+# Ce script permet d'importer des données depuis un fichier CSV vers une table spécifique de la base de données MariaDB.
+# Le nom de la table et le fichier CSV doivent être spécifiés en ligne de commande.
+# Le script vérifie la validité des colonnes et les réorganise si nécessaire.
+#
+# Utilisation : 
+# 1. Exécutez ce script en spécifiant la table et le fichier CSV à importer.
+# 2. Le fichier CSV sera importé dans la table spécifiée, avec gestion des erreurs.
+#
+# Le script effectue les étapes suivantes :
+# - Vérifie que les arguments nécessaires (nom de la table et fichier CSV) sont passés.
+# - Importe les données du fichier CSV dans la table MariaDB spécifiée.
+
 #######
 # Initialisation des variables
 #######

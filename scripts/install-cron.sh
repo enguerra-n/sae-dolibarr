@@ -1,5 +1,19 @@
 #!/bin/bash
 
+###########################################
+# Explication du script
+###########################################
+# Ce script installe et configure le service cron pour exécuter un script de sauvegarde de la base de données chaque jour à 22h.
+# Si le service cron n'est pas actif, le script tente de le démarrer.
+#
+# Utilisation :
+# 1. Exécutez ce script pour installer cron et ajouter une tâche cron pour exécuter un script de sauvegarde.
+#
+# Le script effectue les étapes suivantes :
+# - Met à jour le système et installe le service cron.
+# - Ajoute une tâche cron pour exécuter un script à 22h chaque jour.
+# - Vérifie si le service cron est en cours d'exécution et tente de le démarrer si nécessaire.
+
 # Mettre à jour le système et installer crontab si nécessaire
 echo "Mise à jour du système et installation de crontab..."
 apt-get update -y

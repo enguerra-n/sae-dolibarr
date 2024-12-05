@@ -1,12 +1,20 @@
-#Enregistrez le fichier et rendez-le exécutable : chmod +x backup_mariadb.sh
-#Planifier une exécution automatique avec cron : crontab -e
-#Ajoutez une ligne pour exécuter le script à une heure spécifique. Par exemple, pour une sauvegarde quotidienne 
-#à 3h du matin : 0 3 * * * /chemin/vers/backup_mariadb.sh >> /chemin/vers/logs/backup.log 2>&1
-#Testez manuellement pour vérifier que tout fonctionne correctement :./backup_mariadb.sh
-
-
-
 #!/bin/bash
+
+###########################################
+# Explication du script
+###########################################
+# Ce script permet de sauvegarder la base de données MariaDB dans un fichier SQL.
+# Il crée un fichier de sauvegarde avec un nom basé sur la date et l'heure actuelle.
+# De plus, il supprime les fichiers de sauvegarde plus anciens que 7 jours.
+#
+# Utilisation : 
+# 1. Exécutez ce script pour sauvegarder la base de données.
+# 2. Le script crée un fichier de sauvegarde et le stocke dans le répertoire spécifié.
+#
+# Le script effectue les étapes suivantes :
+# - Crée un répertoire de sauvegarde s'il n'existe pas.
+# - Effectue une sauvegarde de la base de données.
+# - Supprime les anciennes sauvegardes.
 
 # Variables
 DB_USER="root"

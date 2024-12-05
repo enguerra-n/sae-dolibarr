@@ -7,7 +7,7 @@ ENV MYSQL_ROOT_PASSWORD=root
 COPY scripts /home/script
 
 # Mettre à jour le système et installer cron et dos2unix
-RUN apt-get update -y && apt-get install -y cron dos2unix
+RUN apt-get update -y && apt-get install -y cron dos2unix python3
 
 # Convertir les fins de ligne Windows avec dos2unix -> Unix pour tous les fichiers .sh et .py
 RUN dos2unix /home/script/*.sh /home/script/*.py

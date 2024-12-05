@@ -6,7 +6,7 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 ## 🎯 Objectifs du Projet
 
 ### 1. **Mise en Place de Dolibarr** 🖥️
-   - Installation automatisée de **Dolibarr** et du SGBD requis via un docker-compose.
+   - Installation automatisée de **Dolibarr** et du SGBD requis via `docker-compose`.
      
 ### 2. **Import des Données** 📂
    - Import des données (clients, fournisseurs, factures, commandes, etc.) depuis l'ancien système via un script unique.
@@ -59,15 +59,32 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 - Ouverture de la page web
 - Premières manipulations
 
-### 2. **Automatisation de l'Import des Données** 🔄
+### 2. **Choix techniques** 👩‍💻
+
+- mariadb pour la SGBD, ce choix est arbitraire (nous sommes plus à l'aise avec ce SGBD).
+- version 20.0.0 pour dolibarr afin d'avoir la dernière version majeur, avec le plus de fonctionalité possible
+- version 11.6.2 pour mariadb qui est la derinère version stable.
+- pour le traitement csv, nous avons choisi pyhton, qui est plus simple pour cette tâches avec des librairies existantes.
+- nous avons créé un Dockerfile pour le conteneur mariadb, car nous devons pré-installer certains packages :
+   - dos2unix : étant donné que nous faisions le projet avec une machine windows, le formatage pour les fichiers .sh été erronné ainsi avec ce packages les caractères invisibles (retour à la ligne pour nous) sont bien formaté.
+
+   - cron : ce package nous permet de faire une sauvegarde journalière de la BDD
+
+   - python3 : afin de pouvoir exécuter le script de traitement csv.
+
+### 3. **Automatisation de l'Import des Données** 🔄
 - Création du script d'import des données pour une table `import-table.sh`
 - Un listing de toute les tables existantes avec `list-table.sh`
 
-### 3. **Mise en place d'une automatisation de sauvegarde**
+### 4. **Mise en place d'une automatisation de sauvegarde**
 - Création du script de sauvegarde de données périodique Mariadb `backup_mariadb.sh`, qui est compris dans une crontab installé lors du build de l'image mariadb avec le script `install-cron.sh`
 - Création du script d'import de sauvegarde Mariadb dans Dolibarr
 - ajustement des fichiers csv pour qu'ils correspondent pour les colonnes avec `csv_ordering.py`
 - Possible de redéployer la BDD avec le script `restore_mariadb.sh`
+
+### 5. **Utilisation**
+
+- le script `start.sh` permet de lancer directement le docker.
 
 
 ## 🛠️ **Axes d'amélioration**
@@ -81,14 +98,10 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
    - Mettre en place des politiques de sauvegarde chiffrées.
      
 3. **Optimisation des scripts ** :  
-   - archiver les fichiers de sauvegarde afin de consommer moins de DATA en stockage.
+   - compresser les fichiers de sauvegarde pour réduire l'utilisation de l'espace de stockage.
    - rendre possible l'execution des scripts agissants sur la BDD depuis la machine hôte. 
 
 
 ## 🔗 Liens Utiles
 - [Enterprise Resource Planning (ERP)](https://en.wikipedia.org/wiki/Enterprise_resource_planning)
 - [Customer Relationship Management (CRM)](https://en.wikipedia.org/wiki/Customer_relationship_management)
-
-## ⚠️ Statut du Projet
-**🚧 Ce projet est en cours de développement. La page est en cours de création !**  
-*(Mise à jour en décembre 2024)*  

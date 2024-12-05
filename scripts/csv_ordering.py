@@ -1,8 +1,31 @@
+###########################################
+# Explication du script
+###########################################
+
+# Ce script permet de réorganiser les colonnes d'un fichier CSV
+# en fonction d'un ordre spécifié dans un fichier de configuration.
+# Il nettoie les noms de colonnes en supprimant les annotations entre parenthèses.
+#
+# utilisation :
+# - Lecture du fichier CSV d'importation.
+# - Lecture du fichier d'ordre des colonnes.
+# - Nettoyage des noms de colonnes (suppression des annotations).
+# - Vérification des colonnes manquantes et ajout de celles-ci avec des valeurs vides.
+# - Réorganisation des colonnes selon l'ordre spécifié.
+# - Sauvegarde du fichier réorganisé.
+#
+
+###########################################
+# Importations
+###########################################
 import pandas as pd
 import sys
 import os
 import re
 
+###########################################
+# définition des fonctions
+###########################################
 def nettoyer_colonne(colonne):
     """Enlève les annotations entre parenthèses pour faciliter la comparaison des colonnes."""
     return re.sub(r"\s?\(.*\)", "", colonne).strip()
@@ -49,6 +72,9 @@ def reconfigurer_csv(fichier_import, fichier_ordre, fichier_sortie):
     except Exception as e:
         print(f"Erreur dans le traitement du fichier : {e}")
 
+###########################################
+# Programme principal
+###########################################
 if __name__ == "__main__":
     if len(sys.argv) != 4:
         print("Usage : python csv_ordering.py <fichier_import> <fichier_ordre> <fichier_sortie>")

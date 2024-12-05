@@ -1,5 +1,21 @@
 #!/bin/bash
 
+###########################################
+# Explication du script
+###########################################
+# Ce script permet de restaurer une base de données MariaDB à partir d'un fichier dump.
+# Si aucun fichier n'est spécifié lors de l'exécution, un fichier de dump par défaut est utilisé.
+# Il vérifie également si le fichier de dump existe avant de procéder à l'importation.
+#
+# Utilisation : 
+# 1. Exécutez ce script en passant le chemin du fichier dump en argument (optionnel).
+# 2. Si aucun argument n'est passé, un fichier de dump par défaut sera utilisé.
+#
+# Le script effectue les étapes suivantes :
+# - Vérifie l'existence du fichier dump.
+# - Effectue l'importation du dump dans la base de données MariaDB.
+# - Affiche un message de succès ou d'erreur selon le résultat.
+
 # Vérification de l'argument
 if [ -z "$1" ]; then
     echo "Aucun fichier de dump spécifié, utilisation du fichier par défaut."
