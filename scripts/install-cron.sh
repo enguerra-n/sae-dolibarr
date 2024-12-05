@@ -20,6 +20,8 @@ echo "Ajout de la tâche cron..."
 echo "La tâche cron suivante a été ajoutée :"
 crontab -l
 
+service cron start
+
 # Vérifier si le service cron est en cours d'exécution
 echo "Vérification de l'état du service cron..."
 if service cron status | grep -q 'running'; then
