@@ -9,6 +9,8 @@ COPY scripts /home/script
 # Mettre à jour le système et installer cron et dos2unix
 RUN apt-get update -y && apt-get install -y cron dos2unix python3
 
+#installation des paquets pour le script python
+RUN pip install pandas
 # Convertir les fins de ligne Windows avec dos2unix -> Unix pour tous les fichiers .sh et .py
 RUN dos2unix /home/script/*.sh /home/script/*.py
 

@@ -52,19 +52,25 @@ L'objectif est de mettre en place un système ERP/CRM hébergé en interne et d'
 
 ## 📝 Étapes réalisées
 
-### 1. **Découverte de Dolibarr** 🔍
-- Visite du site Web du constructeur
-- Création du Dockerfile pour déploiement
-- Création de la base de données Mariadb
-- Ouverture de la page web
-- Premières manipulations
+### 1. **Test et Installation de Dolibarr** 🔍
+   - **Méthodes d'installation** :  
+     Nous avons testé plusieurs méthodes d'installation de Dolibarr :
+     - **Docker** : Installation automatisée avec `docker-compose`, simple à déployer et à mettre à jour.
+     - **Paquet Debian** : simplicité d'installation sur Linux, mais nécessite des dépendances spécifiques.
+     - **Archives PHP** : installation complexe, moins flexible que Docker.
+     - **VM** : Installation dans une VM, mais plus lourde et moins flexible.
+
+   - **Procédure d'installation choisie** :  
+     Nous avons opté pour l'installation via **Docker** pour sa simplicité et sa flexibilité :
+     1. Cloner le dépôt Git.
+     2. Exécuter `docker-compose up --build` pour lancer les conteneurs.
 
 ### 2. **Choix techniques** 👩‍💻
 
 - mariadb pour la SGBD, ce choix est arbitraire (nous sommes plus à l'aise avec ce SGBD).
 - version 20.0.0 pour dolibarr afin d'avoir la dernière version majeur, avec le plus de fonctionalité possible
 - version 11.6.2 pour mariadb qui est la derinère version stable.
-- pour le traitement csv, nous avons choisi pyhton, qui est plus simple pour cette tâches avec des librairies existantes.
+- pour le traitement csv, nous avons choisi python, qui est plus simple pour cette tâches avec des librairies existantes.
 - nous avons créé un Dockerfile pour le conteneur mariadb, car nous devons pré-installer certains packages :
    - dos2unix : étant donné que nous faisions le projet avec une machine windows, le formatage pour les fichiers .sh été erronné ainsi avec ce packages les caractères invisibles (retour à la ligne pour nous) sont bien formaté.
 
