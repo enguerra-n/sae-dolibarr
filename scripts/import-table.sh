@@ -65,13 +65,6 @@ while getopts "t:c:" opt; do
 done
 
 
-
-if [ -z "$table_name" ] || [ -z "$csv_file" ]; then
-    echo "Usage: $0 -t table_name -c csv_file" >&2
-    exit 1
-fi
-
-
 ####
 # programme principal
 ####
